@@ -22,7 +22,7 @@ Rodei a calculadora pelo terminal (`python Calculadora.py`), escolhendo cada op�
 
 | # | Título | Localização | Severidade | Status |
 |---|--------|-------------|-----------|--------|
-| 1 | Adição soma o primeiro número duas vezes | `adicao()`, linha 4 | Alta | Não resolvido |
+| 1 | Adição soma o primeiro número duas vezes | `adicao()`, linha 4 | Alta | Resolvido |
 | 2 | Divisão por zero derruba o programa | `divisao()`, linha 13 | Alta | Não resolvido |
 | 3 | Fatorial sempre retorna 0 (e aceita negativo) | `fatorial()`, linhas 23-27 | Alta | Não resolvido |
 | 4 | Logaritmo natural usa função inexistente `np.ln` | `logaritmo_natural()`, linha 32 | Crítica | Não resolvido |
@@ -80,7 +80,31 @@ Trocar por `return np.add(x, y)` ou simplesmente `return x + y`.
 
 ### Registro
 - **Data:** 09/11/2026
-- **Status:** Não resolvido
+- **Status:** Resolvido em 09/11/2026 (corrigido com TDD)
+
+### Correção aplicada
+
+**O que foi alterado:** só a função `adicao` em `Calculadora.py`.
+
+```python
+# antes (com bug)
+def adicao(x, y):
+    return x + np.add(x, y)
+
+# depois
+def adicao(x, y):
+    """Retorna a soma de x e y."""
+    return x + y
+```
+
+**Por que foi alterado:** o `x` era somado duas vezes, uma no `x +` e outra dentro do `np.add(x, y)`. Remover a soma extra resolve o problema.
+
+**Como foi feito (TDD):**
+1. **Vermelho:** escrevi 7 testes em `TestAdicao` (`test_calculadora.py`) com o resultado esperado. Rodei com o código ainda com o bug e os 7 falharam ([evidencias/tdd_vermelho.txt](evidencias/tdd_vermelho.txt)).
+2. **Verde:** fiz a correção mínima `return np.add(x, y)`. Os 7 testes passaram ([evidencias/tdd_verde.txt](evidencias/tdd_verde.txt)).
+3. **Refatoração:** troquei por `return x + y`, que é mais simples, segue o mesmo padrão da `subtracao` e devolve `float` comum em vez de `np.float64`. Adicionei um teste para o tipo do retorno e testes de regressão para as outras operações básicas. Ficaram 13 de 13 passando ([evidencias/tdd_refatoracao.txt](evidencias/tdd_refatoracao.txt)).
+
+**Como isso resolve o bug:** `adicao(2, 3)` agora retorna `5`. Pelo menu (opção 1, números 2 e 3) aparece `Resultado: 5.0`. Os testes de regressão mostram que subtração, multiplicação, divisão, potência e raiz continuam funcionando como antes, ou seja, a correção não introduziu bugs novos.
 
 ---
 

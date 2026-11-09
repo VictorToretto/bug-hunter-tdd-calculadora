@@ -105,4 +105,5 @@ def calculadora_cientifica():
     if continuar.lower() == 's':
         calculadora_cientifica()
 
-calculadora_cientifica()
+if __name__ == "__main__":
+    calculadora_cientifica()

@@ -1,0 +1,19 @@
+PS C:\Users\Administrator\Documents\bug-hunter-tdd-calculator> python -m unittest -v
+test_retorna_float_comum_no_menu (test_calculadora.TestAdicao.test_retorna_float_comum_no_menu) ... ok
+test_soma_com_zero (test_calculadora.TestAdicao.test_soma_com_zero) ... ok
+test_soma_como_no_menu_com_float (test_calculadora.TestAdicao.test_soma_como_no_menu_com_float) ... ok
+test_soma_e_comutativa (test_calculadora.TestAdicao.test_soma_e_comutativa) ... ok
+test_soma_numeros_decimais (test_calculadora.TestAdicao.test_soma_numeros_decimais) ... ok
+test_soma_numeros_negativos (test_calculadora.TestAdicao.test_soma_numeros_negativos) ... ok
+test_soma_numeros_positivos (test_calculadora.TestAdicao.test_soma_numeros_positivos) ... ok
+test_soma_positivo_com_negativo (test_calculadora.TestAdicao.test_soma_positivo_com_negativo) ... ok
+test_divisao_com_divisor_diferente_de_zero (test_calculadora.TestRegressaoOperacoesBasicas.test_divisao_com_divisor_diferente_de_zero) ... ok
+test_multiplicacao (test_calculadora.TestRegressaoOperacoesBasicas.test_multiplicacao) ... ok
+test_potencia (test_calculadora.TestRegressaoOperacoesBasicas.test_potencia) ... ok
+test_raiz_quadrada_de_numero_positivo (test_calculadora.TestRegressaoOperacoesBasicas.test_raiz_quadrada_de_numero_positivo) ... ok
+test_subtracao (test_calculadora.TestRegressaoOperacoesBasicas.test_subtracao) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+OK

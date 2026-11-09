@@ -1,7 +1,7 @@
 import numpy as np
 
 def adicao(x, y):
-    return x + np.add(x, y)
+    return np.add(x, y)
 
 def subtracao(x, y):
     return x - y

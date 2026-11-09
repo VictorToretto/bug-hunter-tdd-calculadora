@@ -1,7 +1,8 @@
 import numpy as np
 
 def adicao(x, y):
-    return np.add(x, y)
+    """Retorna a soma de x e y."""
+    return x + y
 
 def subtracao(x, y):
     return x - y

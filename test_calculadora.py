@@ -10,7 +10,14 @@ Como rodar:
 
 import unittest
 
-from Calculadora import adicao
+from Calculadora import (
+    adicao,
+    subtracao,
+    multiplicacao,
+    divisao,
+    potencia,
+    raiz_quadrada,
+)
 
 
 class TestAdicao(unittest.TestCase):
@@ -41,6 +48,35 @@ class TestAdicao(unittest.TestCase):
     def test_soma_como_no_menu_com_float(self):
         # o menu converte a entrada com float(), então testo com float também
         self.assertEqual(adicao(2.0, 3.0), 5.0)
+
+    def test_retorna_float_comum_no_menu(self):
+        # depois da refatoração (x + y) o resultado é float do Python,
+        # igual às outras operações básicas como a subtração
+        self.assertIsInstance(adicao(2.0, 3.0), float)
+
+
+class TestRegressaoOperacoesBasicas(unittest.TestCase):
+    """Testes de regressão: as operações que já funcionavam
+    não podem quebrar por causa da correção da adição."""
+
+    def test_subtracao(self):
+        self.assertEqual(subtracao(10, 4), 6)
+        self.assertEqual(subtracao(4, 10), -6)
+
+    def test_multiplicacao(self):
+        self.assertEqual(multiplicacao(3, 4), 12)
+        self.assertEqual(multiplicacao(-2, 5), -10)
+
+    def test_divisao_com_divisor_diferente_de_zero(self):
+        # divisão por zero é o Bug #2 e ainda não foi corrigida
+        self.assertEqual(divisao(10, 4), 2.5)
+
+    def test_potencia(self):
+        self.assertEqual(potencia(2, 10), 1024)
+        self.assertEqual(potencia(9, 0.5), 3)
+
+    def test_raiz_quadrada_de_numero_positivo(self):
+        self.assertEqual(raiz_quadrada(16), 4)
 
 
 if __name__ == "__main__":

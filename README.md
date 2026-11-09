@@ -75,7 +75,7 @@ Mesmo trabalhando sozinho, tentei organizar a atividade como se fosse um Scrum e
 
 **Meta da sprint:** "A soma da calculadora está correta e coberta por testes automatizados."
 
-**Daily (individual):** no início de cada bloco eu me perguntava o que fiz no anterior, o que vou fazer agora e o que está me bloqueando. O impedimento que apareceu foi na preparação dos testes: quando o arquivo de teste importava a calculadora, o menu abria sozinho e o teste ficava esperando entrada. Resolvi colocando a chamada do menu dentro do `if __name__ == "__main__":`.
+**Daily:** antes de cada bloco eu revisava o que já tinha feito e o que faltava. O que me travou foi na hora de rodar os testes: quando o teste importava a calculadora, o menu abria e ficava esperando eu digitar. Pesquisei e descobri que dava pra resolver colocando a chamada do menu dentro de `if __name__ == "__main__":`.
 
 **Definition of Done:** considerei o Bug #1 pronto quando: (1) existe teste automatizado que reproduz o bug; (2) o teste passa; (3) todos os outros testes passam; (4) o relatório foi atualizado com o status; (5) o código está no GitHub.
 

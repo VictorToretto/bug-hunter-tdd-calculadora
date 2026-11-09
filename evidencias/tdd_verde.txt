@@ -1,0 +1,13 @@
+PS C:\Users\Administrator\Documents\bug-hunter-tdd-calculator> python -m unittest -v
+test_soma_com_zero (test_calculadora.TestAdicao.test_soma_com_zero) ... ok
+test_soma_como_no_menu_com_float (test_calculadora.TestAdicao.test_soma_como_no_menu_com_float) ... ok
+test_soma_e_comutativa (test_calculadora.TestAdicao.test_soma_e_comutativa) ... ok
+test_soma_numeros_decimais (test_calculadora.TestAdicao.test_soma_numeros_decimais) ... ok
+test_soma_numeros_negativos (test_calculadora.TestAdicao.test_soma_numeros_negativos) ... ok
+test_soma_numeros_positivos (test_calculadora.TestAdicao.test_soma_numeros_positivos) ... ok
+test_soma_positivo_com_negativo (test_calculadora.TestAdicao.test_soma_positivo_com_negativo) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
